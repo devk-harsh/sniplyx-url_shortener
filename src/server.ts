@@ -25,7 +25,7 @@ app.use(genericErrorHandler);
 
 app.listen(serverConfig.PORT, ()=>{
     logger.info(`Server is running on http://localhost:${serverConfig.PORT}/api/v1/ping`);
-    logger.info(`Server is running on http://localhost:${serverConfig.PORT}/api/v2/ping`);
+    logger.info(`Sniplyx server started on port ${serverConfig.PORT}`);
     logger.info(`Press Ctrl +C to stop the server`,{"name":"dev servers"});
 
 });
