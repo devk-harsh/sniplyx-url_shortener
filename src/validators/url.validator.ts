@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const shortenUrlSchema = z.object({
+export const shortenUrlBodySchema = z.object({
   body: z.object({
     longUrl: z.string().url("Invalid URL format"),
   }),
