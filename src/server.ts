@@ -3,6 +3,7 @@ import {serverConfig } from './config';
 
 import v1Router from './routers/V1/index.router';
 import v2Router from './routers/V2/index.router';
+import shortRouter from './routers/short.router';
 import { genericErrorHandler } from './middlewares/error.middleware';
 import logger from './config/logger.config';
 import { attachCorrelationIdMiddleware } from './middlewares/correlation.middleware';
@@ -14,6 +15,9 @@ app.use(express.json());
 
 app.use(attachCorrelationIdMiddleware);
 
+
+// Short URL redirects (e.g. GET /s/:shortCode)
+app.use('/s', shortRouter);
 
 app.use('/api/v1', v1Router);
 app.use('/api/v2', v2Router);
